@@ -1,13 +1,15 @@
-Initial csv files have been merged on the primary key (VAERS_ID) using pandas, and added to a pgadmin database (VAERS_DATA).
-A table has been succesfully created, and failed error received when importing data. 
 
-SQL QUERY
+Instructions; use the following two TABLE CREATION tables to create two tables, and import the data from the two csv files located in the
+database/preprocessing branch. VAERS_DATA_T1_CLEANED and VAERS_DATA_T2_CLEANED. Once both tables are created with the data imported,
+use the next queries to join the tables on the VAERS_ID column. 
+
+*FOR VAERS_DATA_T1_CLEANED*
 
 -- Creating table for VAERS_DATA(without symptom and vax csv data)
 CREATE TABLE VAERS_DATA (
 	 INDEX1 INT,
-     VAERS_ID VARCHAR NOT NULL,
-     RECVDATE TEXT, 
+         VAERS_ID VARCHAR NOT NULL,
+         RECVDATE TEXT, 
 	 STATE_ VARCHAR (2),
 	 AGE_YRS FLOAT, 
 	 CAGE_YR FLOAT, 
@@ -47,35 +49,38 @@ CREATE TABLE VAERS_DATA (
 );
 
 
+*FOR VAERS_DATA_T2_CLEANED*
 
 
 CREATE TABLE VAERS_SYMPT_VAX (
+	 INDEX1 INT,
 	 VAERS_ID VARCHAR NOT NULL,
-	 SYMPTOM1 VARCHAR,
-	 SYMPTOMVERSION1 INT,
-	 SYMPTOM2 VARCHAR,
-	 SYMPTOMVERSION2 INT,
-	 SYMPTOM3 VARCHAR,
-	 SYMPTOMVERSION3 INT, 
-	 SYMPTOM4 VARCHAR,
-	 SYMPTOMVERSION4 INT, 
-	 SYMPTOM5 VARCHAR,
-	 SYMPTOMVERSION5 INT,
+	 SYMPTOM1 TEXT,
+	 SYMPTOMVERSION1 FLOAT,
+	 SYMPTOM2 TEXT,
+	 SYMPTOMVERSION2 FLOAT,
+	 SYMPTOM3 TEXT,
+	 SYMPTOMVERSION3 FLOAT, 
+	 SYMPTOM4 TEXT,
+	 SYMPTOMVERSION4 FLOAT, 
+	 SYMPTOM5 TEXT,
+	 SYMPTOMVERSION5 FLOAT,
 	 VAX_TYPE VARCHAR,
 	 VAX_MANU VARCHAR, 
 	 VAX_LOT VARCHAR, 
-	 VAX_DOSE_SERIES INT,
+	 VAX_DOSE_SERIES VARCHAR,
 	 VAX_ROUTE VARCHAR,
 	 VAX_SITE VARCHAR, 
-	 VAX_NAME VARCHAR,
-	 PRIMARY KEY (VAERS_ID),
-     UNIQUE (VAERS_ID)
+	 VAX_NAME TEXT,
+     FOREIGN KEY (VAERS_ID) REFERENCES VAERS_DATA (VAERS_ID)
 	
+	
+       
 	);
-DROP TABLE vaers_data CASCADE;
 
-SET datestyle = mdy;
 
-CAST ('RECVDATE' AS DATE);
 
-SELECT * FROM vaers_data
+
+
+
+
