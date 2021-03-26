@@ -3,7 +3,7 @@ A table has been succesfully created, and failed error received when importing d
 
 SQL QUERY
 
--- Creating table for VAERS_DATA(without symptom and vax csv data) TABLE 1
+-- Creating table for VAERS_DATA(without symptom and vax csv data)
 CREATE TABLE VAERS_DATA (
 	 INDEX1 INT,
      VAERS_ID VARCHAR NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE VAERS_DATA (
 );
 
 
-TABLE 2
+
 
 CREATE TABLE VAERS_SYMPT_VAX (
 	 VAERS_ID VARCHAR NOT NULL,
@@ -72,3 +72,10 @@ CREATE TABLE VAERS_SYMPT_VAX (
      UNIQUE (VAERS_ID)
 	
 	);
+DROP TABLE vaers_data CASCADE;
+
+SET datestyle = mdy;
+
+CAST ('RECVDATE' AS DATE);
+
+SELECT * FROM vaers_data
