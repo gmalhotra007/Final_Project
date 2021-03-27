@@ -1,12 +1,12 @@
 
-Instructions; use the following two TABLE CREATION tables to create two tables, and import the data from the two csv files located in the
-database/preprocessing branch. VAERS_DATA_T1_CLEANED and VAERS_DATA_T2_CLEANED. Once both tables are created with the data imported,
-use the next queries to join the tables on the VAERS_ID column. 
+Instructions; use the following two TABLE CREATION queries to create two tables in a pgadmin database, and import the data from the two csv files located in the
+database/preprocessing branch to each table respectively; VAERS_DATA_T1_CLEANED and VAERS_DATA_T2_CLEANED. Once both tables are created with the data imported,
+use the next queries to join the tables on the VAERS_ID column using a FULLL OUTER JOIN. 
 
 *FOR VAERS_DATA_T1_CLEANED*
 
 -- Creating table for VAERS_DATA(without symptom and vax csv data)
-CREATE TABLE VAERS_DATA (
+CREATE TABLE VAERS_1 (
 	 INDEX1 INT,
          VAERS_ID VARCHAR NOT NULL,
          RECVDATE TEXT, 
@@ -52,7 +52,7 @@ CREATE TABLE VAERS_DATA (
 *FOR VAERS_DATA_T2_CLEANED*
 
 
-CREATE TABLE VAERS_SYMPT_VAX (
+CREATE TABLE VAERS_2 (
 	 INDEX1 INT,
 	 VAERS_ID VARCHAR NOT NULL,
 	 SYMPTOM1 TEXT,
