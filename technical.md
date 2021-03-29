@@ -22,6 +22,7 @@ This fits the project needs well as there are several machine learning models an
 ## Data cleaning techniques
 
 The datasets were merged using Pandas merge method. As it is often needed in data cleaning, several columns which did not add value the end analysis or could have potentially skewed model predictions were dropped. 
+Several rows were also dropped to enforce proper data types and character sets to pass on the cleanest possible data to the modelling step.
 
 The Panda dataframes in ready condition to be fed into the models for traiining, fitting and predicting, were loaded to PgAdmin.
 
