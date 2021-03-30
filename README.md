@@ -31,3 +31,24 @@
     - What are you working on next?
     - How much is covered?
     - If anyone is blocked or not blocked
+
+#### Exploratory Data Analysis 
+- Technologies used for pre-processing
+- anomalies encountered with the data
+- Solution 
+
+#### Database
+- Database used
+- Description of Database
+    - Functional
+    - Joins Used
+    - Primary key used
+
+#### Machine Learning Algorithm 
+- Advantages 
+- Limitation
+- Accuracy 
+- Challenges
+- Solutions 
+
+#### Summarization of Data Pipeline 
