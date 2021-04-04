@@ -3,6 +3,9 @@
 ## Dataset - 
 
 Vaccine Adverse Event Reporting System (VAERS) [dataset].(https://vaers.hhs.gov/data/datasets.html?)
+The dataset provides labelled data, with named columns and categories. 
+For that reason, the first choice is to use supervised machine learning, however, supervised machine learning algorithms tend to overfit data and may make poor predictions on new data based on the data already learned.
+Unsupervised machine learning algorithms are also used for predictions to assess any improvements in correct prediction.
 
 ## Database - Postgres SQL and AWS
 
@@ -31,4 +34,16 @@ This process would allow different team members, and future contributors to setu
 ## Logistic Regression and Neural Networks
 
 Lastly, to bring all the data together and answer the questions set out on the project planning stage; Logistic regression and Neural Networks are implemented to predict outcomes.
+
+Logistic regression is used to determine adverse reactions or posiibility of death. The probablity is assigned when the model determines which class or binary outcome a given data point belongs to.
+
+To identify closely related data points and mitigate skewing of data in case of imbalance between similar data points, K-means clustering is implemented to group data points based on the distance between them. 
+
+Neural Networks learn and recognize patterns and features and is used to classify input in categories, in this case classification into adverse reactions and death in vaccinated individuals.
+
 The outcomes are predicted based on the data used to train and fit the model.
+
+## Data visualisation and Dashboard
+Tableau is a data visualisation tool that makes data easy to understand. Tableau is capable of efficiently processing multiple data files of a variety of format.
+It also provide the ability to create stories and dashboards, and to create sheets a playground for analysis that can be later consolidated into presentation dashboards. The added capability of storing and viewing dashboards on Tableau cloud makes visualisations accessible to an audience of varying background. 
+
