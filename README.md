@@ -36,8 +36,6 @@
 - Technologies used for pre-processing
     - Python Pandas 
     - Jupyter Notebook
-- anomalies encountered with the data
-- Solution 
 
 ### Database
 - Database used
@@ -48,6 +46,10 @@
     - Primary key used: VAERS_ID
 
 ### Machine Learning Algorithm 
+
+- ML used:
+    - Logistic Regression
+    - Single Deep Neural Networks
 
 - Description of preliminary data preprocessing
     - Dropped the columns 
@@ -63,20 +65,19 @@
     - Split and scale data
         - split data into features and targets 
 
-- Logistic Regression and Neural Networks
-
 #### Logistic Regression
 - Advantages:
 
      `Logistic Regression` is typically used to predict binary outcomes, meaning that there are only two possible outcomes. The model analyzes the available data, and when presented with a new sample, mathematically determines its probability of belonging to a class. If the probability is above a certain cutoff point, the sample is assigned to that class. If the probability is less than the cutoff point, the sample is assigned to the other class. For example determining if a person will vote "Yes" or "No" on an issues based on things like income, location, and family size.
-- Limitation
-- Accuracy 
-- Challenges
-- Solutions 
+
+- Challenges:
+    - Logisitc Regression, Single and deep Neural Networks, used with the dataframe at the time (with lots of features) were too prone to overfitting
+    - We are now experimenting with cleaning more the data and trying also unsupervised ML to correct this problem.
+
+
 
 #### Neural Networks
 - Advantages:
 
 `Neural Networks` are advanced form of machine learning that recognizes patterns and features in input data and provides a clear quantitative output. They can create a classification algorithm that determines if an input belongs in one category versus another. Therefore, neural network models can be an alternative to many of the models we have learned throughout the course, such as, logistic regression, or multiple linear regression.
 
-#### Summarization of Data Pipeline 
