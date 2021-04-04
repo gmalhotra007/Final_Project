@@ -82,3 +82,7 @@
 
             `Neural Networks` are advanced form of machine learning that recognizes patterns and features in input data and provides a clear quantitative output. They can create a classification algorithm that determines if an input belongs in one category versus another. Therefore, neural network models can be an alternative to many of the models we have learned throughout the course, such as, logistic regression, or multiple linear regression.
 
+#### Link to Google Slides:
+
+[https://docs.google.com/presentation/d/1AURmMfk4XuFyFQcLU9xwtiExaIyWukNlSQ7n1PLqNVw/edit?skip_itp2_check=true&pli=1#slide=id.gce3735f4c5_0_0] (link)
+
