@@ -84,5 +84,5 @@
 
 #### Link to Google Slides:
 
-[https://docs.google.com/presentation/d/1AURmMfk4XuFyFQcLU9xwtiExaIyWukNlSQ7n1PLqNVw/edit?skip_itp2_check=true&pli=1#slide=id.gce3735f4c5_0_0] (link)
+(https://docs.google.com/presentation/d/1AURmMfk4XuFyFQcLU9xwtiExaIyWukNlSQ7n1PLqNVw/edit?skip_itp2_check=true&pli=1#slide=id.gce3735f4c5_0_0) [link]
 
