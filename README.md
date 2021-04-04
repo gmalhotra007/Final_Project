@@ -48,6 +48,21 @@
     - Primary key used: VAERS_ID
 
 ### Machine Learning Algorithm 
+
+- Description of preliminary data preprocessing
+    - Dropped the columns 
+    - Merged the dataframe into one and exported the csv
+
+- Description of preliminary feature engineering and preliminary feature selection 
+    - Changed dates (objects)columns to datetime
+    - Determined uniques values in each column 
+    - Determined the value counts of the columns needed 
+    - Dropped the columns which were could not be `hot encoded`
+
+- Description of how data was split into training and testing sets
+    - Split and scale data
+        - split data into features and targets 
+
 - Logistic Regression and Neural Networks
 
 #### Logistic Regression
