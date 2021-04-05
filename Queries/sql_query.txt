@@ -1,0 +1,102 @@
+
+Instructions; use the following two TABLE CREATION queries to create two tables in a pgadmin database, and import the data from the two csv files located in the
+database/preprocessing branch to each table respectively; VAERS_DATA_T1_CLEANED and VAERS_DATA_T2_CLEANED. Once both tables are created with the data imported,
+use the next queries to join the tables on the VAERS_ID column using a FULLL OUTER JOIN. 
+
+*FOR VAERS_DATA_T1_CLEANED*
+
+-- Creating table for VAERS_DATA(without symptom and vax csv data)
+CREATE TABLE VAERS_1 (
+	 INDEX1 INT,
+         VAERS_ID VARCHAR NOT NULL,
+         RECVDATE TEXT, 
+	 STATE_ VARCHAR (2),
+	 AGE_YRS FLOAT, 
+	 CAGE_YR FLOAT, 
+	 SEX VARCHAR,
+	 SYMPTOM_TEXT TEXT,
+	 DIED VARCHAR,
+	 DATEDIED TEXT,
+	 L_THREAT VARCHAR,
+	 ER_VISIT VARCHAR,
+	 HOSPITAL VARCHAR,
+	 HOSPDAYS FLOAT,
+	 X_STAY VARCHAR,
+	 DISABLE_ VARCHAR, 
+	 RECOVD VARCHAR,
+	 VAX_DATE TEXT,
+	 ONSET_DATE TEXT,
+	 NUMDAYS FLOAT,
+	 LAB_DATA VARCHAR, 
+	 V_ADMINBY VARCHAR,
+	 V_FUNDBY VARCHAR,
+	 OTHER_MEDS TEXT,
+	 CUR_ILL TEXT, 
+	 HISTORY TEXT,
+	 PRIOR_VAX VARCHAR,
+	 SPLTTYPE VARCHAR,
+	 FORM_VERS FLOAT,
+	 TODAYS_DATE TEXT, 
+	 BIRTH_DEFECT VARCHAR,
+	 OFC_VISIT VARCHAR, 
+	 ER_ED_VISIT VARCHAR, 
+	 ALLERGIES TEXT,
+	 
+	
+	 
+     PRIMARY KEY (VAERS_ID),
+     UNIQUE (VAERS_ID)
+);
+
+
+*FOR VAERS_DATA_T2_CLEANED*
+
+
+CREATE TABLE VAERS_2 (
+	 INDEX1 INT,
+	 VAERS_ID VARCHAR NOT NULL,
+	 SYMPTOM1 TEXT,
+	 SYMPTOMVERSION1 FLOAT,
+	 SYMPTOM2 TEXT,
+	 SYMPTOMVERSION2 FLOAT,
+	 SYMPTOM3 TEXT,
+	 SYMPTOMVERSION3 FLOAT, 
+	 SYMPTOM4 TEXT,
+	 SYMPTOMVERSION4 FLOAT, 
+	 SYMPTOM5 TEXT,
+	 SYMPTOMVERSION5 FLOAT,
+	 VAX_TYPE VARCHAR,
+	 VAX_MANU VARCHAR, 
+	 VAX_LOT VARCHAR, 
+	 VAX_DOSE_SERIES VARCHAR,
+	 VAX_ROUTE VARCHAR,
+	 VAX_SITE VARCHAR, 
+	 VAX_NAME TEXT,
+     FOREIGN KEY (VAERS_ID) REFERENCES VAERS_1 (VAERS_ID)
+	
+	
+       
+	);
+
+*Instructions*
+Use the following create vaers_3 query to join the correct columns, without the index, for all data available. This final table has been exported as vaers_data_cleaned*
+
+
+
+
+
+create table vaers_3 as 
+(SELECT v1.vaers_id, v1.recvdate, v1.state_, v1.age_yrs, v1.cage_yr, v1.sex, v1.symptom_text, v1.died, v1.datedied, v1.l_threat, v1.er_visit, v1.hospital, v1.hospdays, v1.x_stay, v1.disable_, v1.recovd, v1.vax_date,
+v1.onset_date, v1.numdays, v1.lab_data, v1.v_adminby, v1.v_fundby, v1.other_meds, v1.cur_ill, v1.history, v1.splttype, v1.form_vers, v1.todays_date, v1.birth_defect, v1.ofc_visit, v1.er_ed_visit, v1.allergies,
+v2.symptom1, v2.symptomversion1, v2.symptom2, v2.symptomversion2, v2.symptom3, v2.symptomversion3, v2.symptom4, v2.symptomversion4, v2.symptom5, v2.symptomversion5, v2.vax_type, 
+v2.vax_manu, v2.vax_lot, v2.vax_dose_series, v2.vax_route, v2.vax_site, v2.vax_name
+FROM vaers_1 v1
+FULL OUTER JOIN vaers_2 v2
+ON v1.VAERS_ID = v2.VAERS_ID order by v1.vaers_id asc);
+
+
+
+*Misc*
+select * from vaers_3
+
+drop table vaers_3 cascade
