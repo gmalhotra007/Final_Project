@@ -1,5 +1,5 @@
 # Final_Project
-## Steps for pre-processing data (located on 'database/preprocessing' branch, merged with Development);
+## Steps for pre-processing data ('database/preprocessing' branch, merged with Development);
 
 1. Firstly, three csv datasets were retreived from the VAERS webpage (Resources). These three files were read into dataframes using pandas and Jupyter notebook. The patient symptom csv, and vaccine csv were merged together. Two fies were exported, one csv containing VAERS vaccine patient information, and the other containing
 details about symptoms experienced and vaccines administered (VAERS_DATA_T1, and VAERS_DATA_T2). See 2021VAERS_FINALPROJECT_ERD.png. 
