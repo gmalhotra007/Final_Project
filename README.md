@@ -7,3 +7,4 @@ details about symptoms experienced and vaccines administered (VAERS_DATA_T1, and
 
 2. These two csv files were then replicated in pgadmin as tables (SQL queries used are included in our branch). Once two tables were created the csv files were then 
 imported using SQL queries. Before the importing process was complete, several rows were manually removed from each csv as they produced an error due to the specified quatation character import setting. Once the data had been successfully imported into each table, they were merged on the common key, VAERS_ID. Once successfully merged, the index was dropped and a final, cleaned csv (vaers_data_cleaned) was exported for use in the machine learning analysis. 
+
