@@ -94,3 +94,5 @@ imported using SQL queries. Before the importing process was complete, several r
 
 (https://docs.google.com/presentation/d/1AURmMfk4XuFyFQcLU9xwtiExaIyWukNlSQ7n1PLqNVw/edit?skip_itp2_check=true&pli=1#slide=id.gce3735f4c5_0_0) [link]
 
+#### Dashboard Link:
+(https://public.tableau.com/profile/gurnoor8216#!/vizhome/Dashboard1_16180058448220/Dashboard1) [Link]
